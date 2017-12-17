@@ -1,11 +1,9 @@
 <template>
-  <div class="ui fluid container " style="width: 100%;margin-bottom: 0px;padding-bottom: 0px;">
+  <div class="ui fluid container " style="margin-bottom: 0px;padding-bottom: 0px;">
     <myheader></myheader>
     <transition name="bounce">
-      <router-view class="app"></router-view>
+      <router-view class="app " ></router-view>
     </transition>
-    <myfooter></myfooter>
-
   </div>
 </template>
 <script type="text/javascript">

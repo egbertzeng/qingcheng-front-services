@@ -1,18 +1,18 @@
 <template>
-  <div class="fluid container qingcheng-header">
-
+  <div class="ui container qingcheng-header">
     <!--nav-->
-    <div class="ui fixed inverted big compact menu" style="margin-left: 0px; ">
-      <div class="ui container">
+    <div class="ui fixed inverted black big compact menu" style="margin-left: 0px; ">
+      <div class="ui fluid container">
         <!--<div class="item">-->
         <!--<img src="/images/logo.png">-->
         <!--</div>-->
         <!--home-->
         <a class=" item" @mouseover="homeNavMouseOver()" @click="homeNavClick()" :class="[homeNavSelected]">
-          <i class="inverted home icon" :class="[headerIconSize, homeColor]"></i>主页
+          <i class="inverted home icon" :class="[headerIconSize, homeColor]"></i>青橙科技
         </a>
         <!--navCategory-->
-        <a class="  item" v-for="(e,i) in navCategory" @mouseover="navCategoryMouseOver(e)" @click="navCategoryClick(e)"
+        <a class="  item" v-for="(e,i) in navCategory" @mouseover="navCategoryMouseOver(e)"
+           @click="navCategoryClick(e)"
            :class="[e.categorySelected]">
           <i class="inverted  icon" :class="[headerIconSize, e.categoryIconName, e.categoryColor]"></i>
           {{e.categoryNameCn}}
@@ -161,7 +161,6 @@
       <!--TODO:用户信息组件-->
       <UserInfo></UserInfo>
 
-
     </div>
   </div>
 </template>
@@ -177,7 +176,7 @@
     APP_TOKEN_LOCALSTORAGE_NAME,
     APP_SEARCH_CATEGORY_CNNAME,
     APP_SEARCH_CATEGORY_ID, APP_SEARCH_KEY, APP_SEARCH_CATEGORY_ICON, APP_SEARCH_CATEGORY_COLOR,
-    APP_CURRENT_SESSION_EMAIL, APP_CURRENT_LOGIN_USER,APP_TARGET_USER_ROLE_ADMIN, APP_CURRENT_USER_FAVORITE_COURSE,
+    APP_CURRENT_SESSION_EMAIL, APP_CURRENT_LOGIN_USER, APP_TARGET_USER_ROLE_ADMIN, APP_CURRENT_USER_FAVORITE_COURSE,
     APP_CURRENT_USER_FAVORITE_TEACHER, APP_USER_RELATION_STUDENT_STUDENT,
     APP_USER_RELATION_STUDENT_TEACHER, APP_TARGET_USER_ROLE_STUDENT, APP_TARGET_USER_ROLE_TEACHER
   } from "../../../../common/AppSysConstants";
@@ -237,8 +236,7 @@
         //
         orderListNavSelected: "",
         //
-        adminRole:APP_TARGET_USER_ROLE_ADMIN,
-
+        adminRole: APP_TARGET_USER_ROLE_ADMIN,
 
 
       }

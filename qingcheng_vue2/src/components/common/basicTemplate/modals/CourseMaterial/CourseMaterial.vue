@@ -1,5 +1,5 @@
 <template>
-  <div id="js_CourseMaterial_Modal" style="margin-top: 0%" class="modal fade bs-example-modal-lg" data-backdrop="static"
+  <div id="js_CourseMaterial_Modal" style="margin-top: 2%" class="modal fade bs-example-modal-lg" data-backdrop="static"
        data-keyboard="false" tabindex="-1" role="dialog"
        aria-labelledby="gridSystemModalLabel">
     <div class="modal-dialog" role="document" style="width: 1200px;">

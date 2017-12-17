@@ -1,6 +1,5 @@
 <template>
-
-  <div class="ui  fluid container" style="margin-top: 1%;">
+  <div class="ui fluid container" style="margin: 0px;padding-top: 0px; background-color: white;padding: 0px;">
     <div style="margin-left: 1%" class="ui ribbon label" :class="[choiceCourseLabelSize,choiceCourseColor]">
       <i class="icon" :class="[choiceCourseIcon,choiceCourseIconSize]"></i>{{choiceCourseLabelText}}
     </div>

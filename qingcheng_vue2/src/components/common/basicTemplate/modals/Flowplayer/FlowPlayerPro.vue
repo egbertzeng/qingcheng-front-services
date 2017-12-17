@@ -1,5 +1,5 @@
 <template>
-  <div id="modalForFlowPlayer" style="margin-top: 0% ;padding-top: 1%" class="modal fade bs-example-modal-lg"
+  <div id="modalForFlowPlayer" style="margin-top: 2% ;padding-top: 1%" class="modal fade bs-example-modal-lg"
        data-backdrop="static"
        data-keyboard="false" tabindex="-1" role="dialog"
        aria-labelledby="gridSystemModalLabel">
