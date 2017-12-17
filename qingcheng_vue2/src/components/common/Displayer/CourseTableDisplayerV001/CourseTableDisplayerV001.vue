@@ -1,5 +1,5 @@
 <template>
-  <div class="ui fluid container" style="margin: 0px;padding-top: 0px; background-color: white;padding: 0px;">
+  <div class="ui fluid container" style="margin: 0px;background-color: white;padding: 0px;">
     <div style="margin-left: 1%" class="ui ribbon label" :class="[choiceCourseLabelSize,choiceCourseColor]">
       <i class="icon" :class="[choiceCourseIcon,choiceCourseIconSize]"></i>{{choiceCourseLabelText}}
     </div>
@@ -9,8 +9,9 @@
     <!--没有结果提示区域-->
     <NoserachResult></NoserachResult>
     <table v-if="choiceCourse.length>0" v-for="(e,i) of choiceCourse" class="ui compact table"
-           style="margin-top: 1%;margin-bottom: 2%;" >
-      <tbody>
+           style="margin-top: 1%;margin-bottom: 2%; padding: 6px; border: 2px solid;" :style="[{color:choiceCourseColor}]" >
+      <tbody >
+
       <!--标题行-->
       <tr>
         <td style="font-size: 16px;padding-top: 16px;">
@@ -19,7 +20,7 @@
       </tr>
       <!--主体内容行-->
       <tr>
-        <td>
+        <td >
           <div class="ui grid	centered">
             <div class="seven wide column centered " @click.stop.prevent="courseCardClick(e)">
               <div style="cursor: pointer;" class="centered ">
