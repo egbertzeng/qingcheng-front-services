@@ -5,13 +5,20 @@
       <i class="icon" :class="[choiceCourseIcon,choiceCourseIconSize]"></i>{{choiceCourseLabelText}}
     </div>
     <div class="ui container fluid " :class="[choiceCourseColor]"
-         style="border-top: 2px dashed;font-size: small;margin-bottom: 0px;" :style="[{color:choiceCourseColor}]">
+         style="border-top: 3px dashed;font-size: small;margin-bottom: 0px;" :style="[{color:choiceCourseColor}]">
     </div>
     <!--没有结果提示区域-->
     <NoserachResult></NoserachResult>
-    <table v-if="choiceCourse.length>0" v-for="(e,i) of choiceCourse" class="ui  compact table"
-           style="margin-top: 1%;margin-bottom: 5%;">
+    <table v-if="choiceCourse.length>0" v-for="(e,i) of choiceCourse" class="ui compact table"
+           style="margin-top: 1%;margin-bottom: 2%;" >
       <tbody>
+      <!--标题行-->
+      <tr>
+        <td style="font-size: 16px;padding-top: 16px;">
+          <i class=" large film icon" :class="[choiceCourseColor]"></i>标题: {{e.courseName}}
+        </td>
+      </tr>
+      <!--主体内容行-->
       <tr>
         <td>
           <div class="ui grid	centered">
@@ -87,6 +94,53 @@
               </div>
             </div>
           </div>
+        </td>
+      </tr>
+      <!--&lt;!&ndash;课程资料行&ndash;&gt;-->
+      <!--<tr>-->
+        <!--<td>-->
+          <!--&lt;!&ndash;课程资料&ndash;&gt;-->
+          <!--<CoursePdfDisplayerV001-->
+            <!--v-if="e.materialDirName!=''"-->
+            <!--:e="e"-->
+            <!--:c="choiceCourseColor">-->
+          <!--</CoursePdfDisplayerV001>-->
+        <!--</td>-->
+      <!--</tr>-->
+      <!--&lt;!&ndash;课程讲师行&ndash;&gt;-->
+      <!--<tr>-->
+        <!--<td>-->
+          <!--&lt;!&ndash;课程讲师&ndash;&gt;-->
+          <!--<CourseTeacherDisplayerV001-->
+            <!--:e="e"-->
+            <!--:c="choiceCourseColor">-->
+          <!--</CourseTeacherDisplayerV001>-->
+        <!--</td>-->
+      <!--</tr>-->
+      <!--&lt;!&ndash;课程粉丝行&ndash;&gt;-->
+      <!--<tr>-->
+        <!--<td>-->
+          <!--&lt;!&ndash;课程粉丝&ndash;&gt;-->
+          <!--<CourseMaterDisplayerV001-->
+            <!--:e="e"-->
+            <!--:c="choiceCourseColor">-->
+          <!--</CourseMaterDisplayerV001>-->
+        <!--</td>-->
+      <!--</tr>-->
+      <!--&lt;!&ndash;课程评论行&ndash;&gt;-->
+      <!--<tr>-->
+        <!--<td style="padding-bottom: 16px;">-->
+          <!--&lt;!&ndash;课程评论&ndash;&gt;-->
+          <!--<CourseCommentDisplayerV001-->
+            <!--:e="e"-->
+            <!--:c="choiceCourseColor">-->
+          <!--</CourseCommentDisplayerV001>-->
+        <!--</td>-->
+      <!--</tr>-->
+
+      <!--附件信息行-->
+      <tr >
+        <td style="padding-bottom: 16px">
           <div class="ui grid	centered" style="margin-top: 0px;">
             <div class="sixteen wide column centered">
               <!--课程材料-->

@@ -10,7 +10,7 @@
         </div>
         <div class="thirteen wide column">
           <NoserachResult></NoserachResult>
-          <!--学友信息-->
+          <!--学生的基本信息-->
           <div class="ui two column grid">
             <div class="column">
               <i v-if="student.gender" class="male icon" :class="[c]"></i>
@@ -57,7 +57,7 @@
         </div>
       </div>
 
-      <!--同学关注的课程-->
+      <!--学生关注的课程-->
       <div class="title" @click="getStudentFavoriteCourse(student)">
         <img v-if="(titleMiniPhoto)&&(student.email!=undefined)" class="ui avatar image"
              :src="composePhotoFileOpenUrl(student)">

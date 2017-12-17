@@ -8,9 +8,11 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
             aria-hidden="true">&times;</span></button>
-          <div class="modal-title " id="gridSystemModalLabel">
-            <img v-if="currentVideo.filePoster!=undefined" class="ui avatar  image"
-                 :src="composeDfsFileOpenUrl(currentVideo.filePoster)">
+          <div class="modal-title " id="gridSystemModalLabel" >
+            <img v-if="currentVideo.filePoster!=undefined" class="ui avatar image"
+                 :src="composeDfsFileOpenUrl(currentVideo.filePoster)"
+                 style="cursor: pointer;"
+            alt="查看课程详情">
             <span>{{currentPlayingCourseName}}:{{currentPlayingVideoName}}</span>
           </div>
         </div>
@@ -64,6 +66,8 @@
   import {App_Random_Color} from "../../../../../common/AppColorConstants";
   import routerUrl from "../../../../../common/FrontRouterConstants";
   import {js_AppFlowPlayer_Modal_hide} from "./FlowPlayerProCaller";
+  import {js_CourseDetailModal_show} from "../CourseDetail/CourseDetailCaller";
+  import {js_goToCourseDetail} from "../../../../../common/services/router/AppRouterUtil";
   export default {
     created(){
       $('.flowplayer-play-item .image').dimmer({on: 'hover'});
@@ -96,6 +100,9 @@
       }
     },
     methods: {
+      /**
+       * 获取需要播放的课程
+       */
       fentchVideoPlayListByCourseUrl(){
         this.currtentPlayingCourse = this.$store.state.currtentFocusCourse4Player;
         if (this.currtentPlayingCourse != "") {
@@ -113,7 +120,7 @@
         this.flowPlayterCaller(e.fileUrl, true);
       },
       flowPlayterCaller(uri, autoPlay) {
-       let url = REST_URL_COURSE_FILE_OPNE_REST_URL + uri;
+        let url = REST_URL_COURSE_FILE_OPNE_REST_URL + uri;
         this.trigerFlowplayer("", "APP_MY_FLOWPLAYER_HTML_ID", url, autoPlay);
       },
 
@@ -132,9 +139,9 @@
         }
       },
       setBestModalWidth(){
-       let maxVideoNameLenght = 0;
+        let maxVideoNameLenght = 0;
         for (let i = 0; i < this.videoFiles.length; i++) {
-         let l = this.videoFiles[i].fileName.length;
+          let l = this.videoFiles[i].fileName.length;
           maxVideoNameLenght = (maxVideoNameLenght > l) ? maxVideoNameLenght : l;
         }
         if (maxVideoNameLenght > 0 && maxVideoNameLenght <= 25) {
@@ -148,14 +155,14 @@
 
       trigerFlowplayer(scritpsrc, htmlid, videourl, autoplay) {
         //1.初始player
-       let id = htmlid;
-       let url = videourl;
-       let swfp = "/libs/flowplayer-build/build/flowplayer.commercial.swf";
+        let id = htmlid;
+        let url = videourl;
+        let swfp = "/libs/flowplayer-build/build/flowplayer.commercial.swf";
         //2.解析URL
         url = encodeURI(url);
         url = encodeURI(url);
         //3.配置项
-       let properties = {
+        let properties = {
           clip: {
             autoPlay: autoplay,       //是否自动播放，默认true
             autoBuffering: true,    //是否自动缓冲视频，默认true
@@ -210,8 +217,8 @@
         let player = $f(id, swfp, properties).setVolume(100).play();
       },
       getVideoPlayListByCourseUrl(e){
-       let url = REST_URL_VIDEO_LIST_ONE_COURSE_REST_URL;
-       let params = {dirPath: e.courseUrl};
+        let url = REST_URL_VIDEO_LIST_ONE_COURSE_REST_URL;
+        let params = {dirPath: e.courseUrl};
         App_Ajax_Get(this, url, params).then(function (data) {
           this.videoFiles = data;
           if (this.videoFiles.length <= 0) {

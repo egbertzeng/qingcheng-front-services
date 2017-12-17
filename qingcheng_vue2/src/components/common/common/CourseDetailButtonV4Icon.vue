@@ -25,6 +25,10 @@
     updated(){
     },
     methods: {
+      /**
+       * 打开课程详情
+       * @param e 课程
+       */
       goToCourseDetail(e){
         js_CourseDetailModal_show(this, e);
         //js_goToCourseDetail(this, e);

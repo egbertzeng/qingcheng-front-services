@@ -1,8 +1,8 @@
 <template>
-  <div class="ui four column grid" style="cursor: pointer">
+  <div class="ui four column  grid" style="cursor: pointer">
     <div v-if="studentShow" class="column"
          @click.stop.prevent="toFindCourseMate(e)">
-      <i class="user icon" :class="[c]"></i>学友
+      <i class="user icon" :class="[c]"></i>粉丝
     </div>
     <div v-if="teacherShow" class="column"
          @click.stop.prevent="toFindeCourseTeacher(e)">

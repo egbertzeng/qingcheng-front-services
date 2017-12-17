@@ -13,6 +13,7 @@
 <script type="text/javascript">
   import routerUrl from "../../../common/FrontRouterConstants";
   import {js_goToCourseDetail} from "../../../common/services/router/AppRouterUtil"
+  import {js_CourseDetailModal_show} from "../basicTemplate/modals/CourseDetail/CourseDetailCaller";
   export default {
     props: {
       e: {required: true},
@@ -27,7 +28,9 @@
     },
     methods: {
       goToCourseDetail(e){
-        js_goToCourseDetail(this, e);
+        js_CourseDetailModal_show(this, e);
+
+//        js_goToCourseDetail(this, e);
       },
     }
   }

@@ -32,15 +32,11 @@
              :src="composePhotoFileOpenUrl(commentUser)">
       </a>
       <div class="content">
-        <a class="author">
+        <a class="author" @click="getUseDetailInfo()">
           <i v-if="commentUser.gender" class="ui male icon" :class="[c]"></i>
           <i v-else="commentUser.gender" class="ui female icon" :class="[c]"></i>
           {{commentUser.name}}
         </a>
-        <!--<div class="metadata">-->
-        <!--<div class="date">2 days ago</div>-->
-        <!--<div class="rating"><i class="star icon"></i> 5 Faves</div>-->
-        <!--</div>-->
         <div class="text">
           <i class="ui comment outline icon" :class="[c]"></i>
           {{comment.commentContent}}

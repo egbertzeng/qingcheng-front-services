@@ -16,7 +16,6 @@
         </CoursePdfTemplate4Table>
       </div>
     </div>
-
     <div v-else="useTableTemplate" class="content">
       <div class="ui two column grid" style="background-color: whitesmoke; padding: 0px;">
         <div class="column" v-for="(k,i) of e.materialFiles">
